@@ -5,7 +5,7 @@
 // por el correspondiente.
 
 // Crea una variable de tipo string.
-const nuevoString = "Ejemplo";
+const nuevoString = "Hola";
 
 // Crea una variable de tipo number.
 const nuevoNumero = 5;
@@ -20,7 +20,7 @@ const nuevaResta = 10 - 7 === 3;
 const nuevaMultiplicacion = 10 * 4 === 40;
 
 // Resuelve el siguiente problema matemático.
-const nuevoModulo = 21 % 7 === 0;
+const nuevoModulo = 21 % 5 === 1;
  
 /*⚠️ NO MODIFIQUES NADA DEBAJO DE ESTO ⚠️*/
 module.exports = {
