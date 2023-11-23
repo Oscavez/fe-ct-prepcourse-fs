@@ -22,14 +22,18 @@ function incrementarPorUno(array) {
    // El arreglo recibido por parámetro contiene números.
    // Retornar un arreglo con los elementos incrementados en +1.
    // Tu código:
-   return array[array + 1];
+   for (var i=0;i<array.length;i++){
+      array[i]=array[i]+1;
+   };
+   return array;
 }
 
 function agregarItemAlFinalDelArray(array, elemento) {
    // Agrega el "elemento" al final del arreglo recibido.
    // Retorna el arreglo.
    // Tu código:
-   return array[array.length];
+   array.push(elemento);
+   return array;
    
 }
 
@@ -37,6 +41,8 @@ function agregarItemAlComienzoDelArray(array, elemento) {
    // Agrega el "elemento" al comienzo del arreglo recibido.
    // Retorna el arreglo.
    // Tu código:
+   array.unshift(elemento);
+   return array;
 }
 
 function dePalabrasAFrase(palabras) {
@@ -45,31 +51,47 @@ function dePalabrasAFrase(palabras) {
    // con un espacio entre cada palabra.
    // Ejemplo: ['Hello', 'world!'] -> 'Hello world!'.
    // Tu código:
-   return palabras.join [" "];
+
+   return palabras.reduce(function (acc, ele) {
+      return acc + " " + ele;
+   })  
 }
+
 
 function arrayContiene(array, elemento) {
    // Verifica si el elemento existe dentro del arreglo recibido.
    // Retornar true si está, o false si no está.
    // Tu código:
+
+   return array.includes (elemento);
 }
 
 function agregarNumeros(arrayOfNums) {
    // El parámetro "arrayOfNums" debe ser un arreglo de números.
    // Suma todos los elementos y retorna el resultado.
    // Tu código:
+   return arrayOfNums.reduce (function (acc , elemento) {
+      acc = acc + elemento;
+      return acc;
+   })
 }
 
 function promedioResultadosTest(resultadosTest) {
    // El parámetro "resultadosTest" es un arreglo de números.
    // Itera (en un bucle) los elementos del arreglo y devuelve el promedio de las notas.
    // Tu código:
-}
+   var result = resultadosTest.reduce (function (acc , elemento){
+      acc = acc + elemento;
+      return acc;
+   })
+   return result / resultadosTest.length;
+} 
 
 function numeroMasGrande(arrayOfNums) {
    // El parámetro "arrayOfNums" es un arreglo de números.
    // Retornar el número más grande.
    // Tu código:
+    return Math.max (...arrayOfNums);
 }
 
 function multiplicarArgumentos() {
@@ -77,18 +99,39 @@ function multiplicarArgumentos() {
    // Si no se pasan argumentos retorna 0. Si se pasa un argumento, simplemente retórnalo.
    // [PISTA]: "arguments" es un arreglo.
    // Tu código:
+   if (arguments.length === 0){
+      return 0;
+   }else {
+      var resultado = 1;
+      for (var i = 0; i < arguments.length; i++){
+         resultado = resultado * arguments [i];
+      } 
+      return resultado;
+   } 
 }
 
 function cuentoElementos(array) {
    // Desarrolla una función que retorne la cantidad de elementos del arreglo cuyo valor sea mayor que 18.
    // Tu código:
-}
+   var contador = 0;
+   array.forEach(function (ele) {
+      if (ele > 18) {
+         contador = contador + 1
+      }      
+   })
+   return contador;
+   }
+
 
 function diaDeLaSemana(numeroDeDia) {
    // Supongamos que los días de la semana se codifican como 1 = Domingo, 2 = Lunes y así sucesivamente.
    // Realiza una función que, dado el número del día de la semana, retorne: "Es fin de semana"
    // si el día corresponde a "Sábado" o "Domingo", y "Es dia laboral" en caso contrario.
    // Tu código:
+   if ( numeroDeDia === 1 || numeroDeDia === 7){
+      return "Es fin de semana";
+   }
+   return "Es dia laboral";
 }
 
 function empiezaConNueve(num) {
