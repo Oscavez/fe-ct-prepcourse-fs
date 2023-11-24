@@ -138,12 +138,15 @@ function empiezaConNueve(num) {
    // Esta función recibe por parámetro un número.
    // Debe retornar true si el entero inicia con 9 y false en otro caso.
    // Tu código:
+   return num.toString().startsWith(9);
 }
 
 function todosIguales(array) {
    // Si todos los elementos del arreglo son iguales, retornar true.
    // Caso contrario retornar false.
    // Tu código:
+   return array.every(ele => ele === array[0]);
+
 }
 
 function mesesDelAño(array) {
@@ -151,18 +154,34 @@ function mesesDelAño(array) {
    // "Marzo" y "Noviembre", guardarlos en un nuevo arreglo y retornarlo.
    // Si alguno de los meses no está, retornar el string: "No se encontraron los meses pedidos".
    // Tu código:
+   var meses = ["Enero", "Marzo", "Noviembre"];
+   var newMeses = array.filter ( mes => meses.includes(mes));
+   if (newMeses.length === meses.length) return newMeses;
+   return "No se encontraron los meses pedidos";
 }
 
 function tablaDelSeis() {
    // Escribe una función que muestre la tabla de multiplicar del 6 (del 0 al 60).
    // La función devuelve un arreglo con los resultados de la tabla de multiplicar del 6 en orden creciente.
    // Tu código:
+   var result = [];
+   for (var i=0; i <= 10; i++){
+      result.push(6 * i);
+   } return result;
 }
 
 function mayorACien(array) {
    // La función recibe un arreglo con enteros entre 0 y 200.
    // Recorrerlo y retornar un arreglo con todos los valores mayores a 100 (no incluye el 100).
    // Tu código:
+   var result = [];
+      for (i = 0; i < array.length; i++){
+         if (array[i] > 100){
+            result.push(array[i]);
+         }
+         
+      }
+   return result;
 }
 
 /* ----------------------------------------------------------------------------------
@@ -176,6 +195,10 @@ function breakStatement(num) {
    // la ejecución y retornar el string: "Se interrumpió la ejecución".
    // [PISTA]: utiliza el statement 'break'.
    // Tu código:
+   var array = [];
+   for (var i = 0; i < num.length; i++){
+      array.push(num[i+2]);
+   }
 }
 
 function continueStatement(num) {
