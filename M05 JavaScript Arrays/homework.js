@@ -1,5 +1,7 @@
 /*⚠️ NO MODIFIQUES EL NOMBRE DE LAS DECLARACIONES ⚠️*/
 
+const { Linter } = require("eslint");
+
 function devolverPrimerElemento(array) {
    // Retornar el primer elemento del arreglo recibido por parámetro.
    // Tu código:
@@ -195,10 +197,18 @@ function breakStatement(num) {
    // la ejecución y retornar el string: "Se interrumpió la ejecución".
    // [PISTA]: utiliza el statement 'break'.
    // Tu código:
-   var array = [];
-   for (var i = 0; i < num.length; i++){
-      array.push(num[i+2]);
-   }
+   const resultArray = [];
+
+  for (let i = 0; i < 10; i++) {
+    num += 2;
+    resultArray.push(num);
+
+    if (num === i) {
+      return "Se interrumpió la ejecución";
+    }
+  }
+
+  return resultArray;
 }
 
 function continueStatement(num) {
@@ -208,6 +218,19 @@ function continueStatement(num) {
    // se continua con la siguiente iteración.
    // [PISTA]: utiliza el statement 'continue'.
    // Tu código:
+   const resultArray = [];
+
+   for (let i = 0; i < 10; i++) {
+     if (i === 5) {
+       // Si el número de iteraciones es 5, no sumar y continuar con la siguiente iteración
+       continue;
+     }
+ 
+     num += 2;
+     resultArray.push(num);
+   }
+ 
+   return resultArray;
 }
 
 /*⚠️ NO MODIFIQUES NADA DEBAJO DE ESTO ⚠️*/
